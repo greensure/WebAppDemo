@@ -5,7 +5,7 @@
 - 秒杀列表页API <br>
 http://localhost:8080/seckill/list<br>
 - 秒杀列表页效果
-![秒杀列表页效果](58A44B0317F2435D916437F64DF60B6F)
+![秒杀列表页效果](https://github.com/greensure/WebAppDemo/blob/master/seckill/screenshots/%E7%A7%92%E6%9D%80%E5%88%97%E8%A1%A8%E9%A1%B5%E6%95%88%E6%9E%9C.png)
 
 - 详情页API
 http://localhost:8080/seckill/1000/detail
