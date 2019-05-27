@@ -77,7 +77,7 @@ exception包：自定义异常类,当出现异常时要提醒接口使用方，�
 4、一致的获取对象；<br>
 
 ## Spring-IOC注入方式和场景
-![Spring-IOC注入方式和场景](60561AEB9DB145AD85E05F0556D32456)
+![Spring-IOC注入方式和场景](https://github.com/greensure/images/blob/master/seckill_images/Spring-IOC%E6%B3%A8%E5%85%A5%E6%96%B9%E5%BC%8F%E5%92%8C%E5%9C%BA%E6%99%AF.png)
 
 该项目使用XML配置、package-scan、Annotation注解；<br>
 
@@ -85,21 +85,21 @@ exception包：自定义异常类,当出现异常时要提醒接口使用方，�
 在spring中有声明式事务的概念。我们可以利用xml配置文件的方法，或者使用Annotation的方法，将需要加入事务控制的方法声明一下就可以了。这样spring容器就会自动的扫描声明过的方法，自动的加入事务的开启、提交、回滚 操作。我们可以更加专注于我们的业务逻辑。这就是声明式事务的概念；
 
 ## 声明式事务的使用方式
-![声明式事务的使用方式](69E61DAA730E4FBCAFB03D5680A782CF)
+![声明式事务的使用方式](https://github.com/greensure/images/blob/master/seckill_images/%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F.png)
 
 ## 什么时候回滚事务
 1、抛出运行期异常（RuntimeException）;<br>
 2、小心不当的try-catch;<br>
 
 ## SpringMVC运行流程
-![SpringMVC运行流程](D733B6206CA4496687F720F6D1C083CE)
+![SpringMVC运行流程](https://github.com/greensure/images/blob/master/seckill_images/SpringMVC%E8%BF%90%E8%A1%8C%E6%B5%81%E7%A8%8B.png)
 
 
 ## HTTP请求地址映射原理
-![HTTP请求地址映射原理](315C9E51F9F74C8ABCF4533CC9F9EC5A)
+![HTTP请求地址映射原理](https://github.com/greensure/images/blob/master/seckill_images/%E6%B3%A8%E8%A7%A3%E6%98%A0%E5%B0%84%E6%8A%80%E5%B7%A7.png)
 
 ## 注解映射技巧
-![注解映射技巧](25A7D87C5102427EBE7513A38E0B8A2B)
+![注解映射技巧](https://github.com/greensure/images/blob/master/seckill_images/%E6%B3%A8%E8%A7%A3%E6%98%A0%E5%B0%84%E6%8A%80%E5%B7%A7.png)
 
 ## 请求方法细节处理
 1、请求参数绑定；<br>
@@ -136,20 +136,20 @@ redirect（间接转发）就相当于："A找B借钱，B说没有，让A去找C
 return的类型一定要友好，而不是return一个map，然后里面是随便放置key-value这样的数，或者是return了一个entity（且这个entity数据不够）；一个方法的退出可以正常的返回，还可以抛出异常，这个异常有的时候不是坏事情，有时是业务允许的；
 
 # 前端交互采用的技术
-![前端交互采用的技术](2D79B2FF706B4ED2BB41094D75E1569E)
+![前端交互采用的技术](https://github.com/greensure/images/blob/master/seckill_images/%E5%89%8D%E7%AB%AF%E4%BA%A4%E4%BA%92%E9%87%87%E7%94%A8%E7%9A%84%E6%8A%80%E6%9C%AF.png)
 
 # 前端页面交互流程
 ## 列表页流程逻辑
-![前端页面流程](5471D8A47AFE4EC7A51FC473464C9BF2)
+![前端页面流程](https://github.com/greensure/images/blob/master/seckill_images/%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2%E6%B5%81%E7%A8%8B.png)
 
 ## 详情页流程逻辑
-![详情页流程逻辑](AECC24330BD94D0E874BA757FB83487D)
+![详情页流程逻辑](https://github.com/greensure/images/blob/master/seckill_images/%E8%AF%A6%E6%83%85%E9%A1%B5%E6%B5%81%E7%A8%8B%E9%80%BB%E8%BE%91.png)
 
 # 秒杀系统高并发优化
 ## 秒杀系统高并发接口
 >红色部分代表可能出现高并发的点，绿色部分代表不会出现高并发的点；<br>
 
-![秒杀系统高并发优化分析](58B9594EBE8942C99C29D70496595867)
+![秒杀系统高并发优化分析](https://github.com/greensure/images/blob/master/seckill_images/%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F%E9%AB%98%E5%B9%B6%E5%8F%91%E4%BC%98%E5%8C%96%E5%88%86%E6%9E%90.png)
 
 ## 为什么要单独获得系统时间？
  > 单独获得系统时间为高并发优化做铺垫；
@@ -192,7 +192,7 @@ CDN运营商的部署一般都是在离用户最近的网络节点上，用户�
 一致性维护成本底：当秒杀的东西或秒杀对象改变后，可以修改数据库，同时可以改下缓存或者干脆不改，等超时之后再改；<br>
 
 # 秒杀地址接口优化
-![秒杀地址接口优化](6914206B1DE04A198E2E6F7983AEF357)
+![秒杀地址接口优化](https://github.com/greensure/images/blob/master/seckill_images/%E7%A7%92%E6%9D%80%E5%9C%B0%E5%9D%80%E6%8E%A5%E5%8F%A3%E4%BC%98%E5%8C%96.png)
 
 <br>
 请求地址要拿到秒杀对象，他会先返回Redis, 然后再返回Mysql， 如果没有的话，返回Mysql;<br> 对于同一个秒杀的对象来说，下一次访问的时候可以直接从Redis缓存中获取到 ；<br>
@@ -214,7 +214,7 @@ CDN运营商的部署一般都是在离用户最近的网络节点上，用户�
 一行数据竞争即热点商品问题：<br> 一瞬间会有大量的用户参与进来，去点击按钮进行秒杀，那么也就是在一行数据里产生竞争，这个会对Mysql里表中的那一行数据产生大量的update减库存竞争，这也是我们分析到的秒杀操作比较困难的一个点 。
 
 # 秒杀的其他方案分析
-![其他方案分析](F19B872D2A204CC899E4177E46A8EAA3)
+![其他方案分析](https://github.com/greensure/images/blob/master/seckill_images/%E5%85%B6%E4%BB%96%E6%96%B9%E6%A1%88%E5%88%86%E6%9E%90.png)
 <br>
 分析这样架构的问题及维护点：<br>
 当执行秒杀的时候，一般的系统是这样做的，他做一个原子计数器，这个原子计数器可以通过一些Redis或NoSQL来去实现，这个原子计数器就是记录商品的库存，当一个用户进来执行秒杀的时候会减库存，即减原子计数器，他是一个保证原子性，当减库存减原子计数器成功之后，他会去记录一个行为，比如谁去减了这个库存，记录下来之后作为一个消息放到分布式的MQ中 , 这个分布式的MQ就是消息队列，常用的消息队列例如RabitMQ, 阿里巴巴自己实现的非常高效的RocketMQ(支持事务，更强大), j2ee官方版本的ActiveMQ, Linkedin开发的kafka等，这些都是分布式 MQ;<br>
@@ -247,9 +247,9 @@ NoSQL, MQ是分布式服务，就像Mysql一样都是部署在另外一些机器
 
 >同一个id执行update减库存瓶颈分析：<br>
 
-![同一个id执行update减库存瓶颈分析](907E82AAF519410B8320FF32A386A3E8)
+![同一个id执行update减库存瓶颈分析](https://github.com/greensure/images/blob/master/seckill_images/%E5%90%8C%E4%B8%80%E4%B8%AAid%E6%89%A7%E8%A1%8Cupdate%E5%87%8F%E5%BA%93%E5%AD%98%E7%93%B6%E9%A2%88%E5%88%86%E6%9E%90.png)
 <br>
-![压力测试](A65FE5BDCFAF4D8496EFF89E9456C32B)
+![压力测试](https://github.com/greensure/images/blob/master/seckill_images/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95.png)
 <br>
 
 >用同一个id进行减库存的测试阐述：<br>
@@ -258,7 +258,7 @@ NoSQL, MQ是分布式服务，就像Mysql一样都是部署在另外一些机器
 那么是什么原因让Mysql低效了呢，如果单单是一条UPDATE, 他的QPS可以抗的很高，而且负载都是一点多，让我们来看下java控制事务的行为分析：
 <br>
 ## java控制事务行为分析
-![ava控制事务行为分析](648971BC85D34DA2826C2316D07BE87D)
+![java控制事务行为分析](https://github.com/greensure/images/blob/master/seckill_images/ava%E6%8E%A7%E5%88%B6%E4%BA%8B%E5%8A%A1%E8%A1%8C%E4%B8%BA%E5%88%86%E6%9E%90.png)
 
 <br>
 图左：update table set num = num -1 where id =10 and num > 0即当库存有货的时候，对库存进行减一操作，执行完之后会进行" insert 购买明细"；<br>
@@ -271,11 +271,11 @@ NoSQL, MQ是分布式服务，就像Mysql一样都是部署在另外一些机器
 <br>
 
 ## 秒杀瓶颈分析
-![瓶颈分析](2E2B3359B7BB4107A116CB5EAAB260D3)
+![瓶颈分析](https://github.com/greensure/images/blob/master/seckill_images/%E7%93%B6%E9%A2%88%E5%88%86%E6%9E%90.png)
 
 <br>
 
-![瓶颈分析2](35A56523F3A743449D80CDACB39CABC8)
+![瓶颈分析2](https://github.com/greensure/images/blob/master/seckill_images/%E7%93%B6%E9%A2%88%E5%88%86%E6%9E%902.png)
 <br>
 
 瓶颈分析阐述：<br>
@@ -292,13 +292,13 @@ NoSQL, MQ是分布式服务，就像Mysql一样都是部署在另外一些机器
 <br>
 
 ## 秒杀优化方向
-![优化分析](316D98B815984D15A05CA7C56DCEE09A)
+![优化分析](https://github.com/greensure/images/blob/master/seckill_images/%E4%BC%98%E5%8C%96%E5%88%86%E6%9E%90.png)
 
 <br>
 
 ## 秒杀延迟分析
 
-![延迟分析](63309A9288D44954917BEE62A4EC92AE)
+![延迟分析](https://github.com/greensure/images/blob/master/seckill_images/%E5%BB%B6%E8%BF%9F%E5%88%86%E6%9E%90.png)
 
 <br>
 延迟分析阐述：<br>
@@ -306,7 +306,7 @@ NoSQL, MQ是分布式服务，就像Mysql一样都是部署在另外一些机器
 <br>
 <br>
 
-![异地机房网络延迟分析](35B7D1A54B684AB4BBFC35CE2E9FEF49)
+![异地机房网络延迟分析](https://github.com/greensure/images/blob/master/seckill_images/%E5%BC%82%E5%9C%B0%E6%9C%BA%E6%88%BF%E7%BD%91%E7%BB%9C%E5%BB%B6%E8%BF%9F%E5%88%86%E6%9E%90.png)
 <br>
 以上是同城机房网络延迟分析阐述，如果是异地机房网络延迟又会怎样呢？<br>
 
