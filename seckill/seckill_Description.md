@@ -258,7 +258,8 @@ NoSQL, MQ是分布式服务，就像Mysql一样都是部署在另外一些机器
 那么是什么原因让Mysql低效了呢，如果单单是一条UPDATE, 他的QPS可以抗的很高，而且负载都是一点多，让我们来看下java控制事务的行为分析：
 <br>
 ## java控制事务行为分析
-![ava控制事务行为分析](https://github.com/greensure/images/blob/master/seckill_images/ava%E6%8E%A7%E5%88%B6%E4%BA%8B%E5%8A%A1%E8%A1%8C%E4%B8%BA%E5%88%86%E6%9E%90.png)
+
+![java控制事务行为分析](https://github.com/greensure/images/blob/master/seckill_images/ava%E6%8E%A7%E5%88%B6%E4%BA%8B%E5%8A%A1%E8%A1%8C%E4%B8%BA%E5%88%86%E6%9E%90.png)
 
 <br>
 图左：update table set num = num -1 where id =10 and num > 0即当库存有货的时候，对库存进行减一操作，执行完之后会进行" insert 购买明细"；<br>
