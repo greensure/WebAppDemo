@@ -1,4 +1,16 @@
 
+# 秒杀项目实战简述/总结：
+项目从无到有的搭建、构建； <br>
+## 项目框架配置：
+(1)项目的搭建技术：Spring,Mybatis,Maven; <br>
+(2)maven,web.xml,Mybatis,Spring的配置； <br>
+(3)Mybatis如何与Spring进行整合； <br>
+(4)Dao，Serice层的单元测试； <br>
+
+## 关键知识点：
+怎么去携带对象实体？ <br>
+SpringMVC的运行流程； <br>
+
 
 # 秒杀web应用部署运行接口及页面效果
 ## 秒杀列表页
