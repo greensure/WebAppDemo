@@ -51,8 +51,13 @@ public class ExcelDaoTest {
     @Test
     public void writeDatasToExcel() {
 //        SuccessKilled successKilled = new SuccessKilled(1002,123456789);
-        SuccessKilled successKilled = new SuccessKilled(123456789);
+        SuccessKilled successKilled = new SuccessKilled(1234567890);
+//        successKilled = new SuccessKilled(1007,1234567891);
+//        successKilled = new SuccessKilled(1008,1234567892);
+//        successKilled = new SuccessKilled(1009,1234567893);
+
         List<SuccessKilled> contentList = new ArrayList<>();
+
         contentList.add(successKilled);
         for (int i = 0; i < contentList.size(); i++) {
             excelDao.writeDatasFromExcel(contentList);
