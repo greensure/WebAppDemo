@@ -24,6 +24,13 @@
         limit #{offset}, #{limit}
     </select>
 
-    <!--TODO mybatis调用 存储过程-->
-    <!--https://github.com/iamycx/Spring-learning/blob/master/seckill/src/main/resources/mapper/SeckillDao.xml-->
+    <!-- mybatis调用 存储过程-->
+    <select id="killByProcedure" statementType="CALLABLE">
+        call execute_seckill(
+        #{seckillId, jdbcType=BIGINT, mode=IN},
+        #{phone, jdbcType=BIGINT, mode=IN},
+        #{killTime, jdbcType=TIMESTAMP, mode=IN},
+        #{result, jdbcType=INTEGER, mode=OUT}
+        )
+    </select>
 </mapper>

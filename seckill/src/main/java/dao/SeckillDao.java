@@ -36,6 +36,13 @@ public interface SeckillDao {
     /**
      * @MethodName
      * @Description 使用存储过程执行秒杀
+     * 该接口无需返回值，void即可
+     *
+     * 为什么该接口参数传入Map?
+     * 原因分析如下：
+     * result需要把result也放入参数里，告知MySQL,
+     * 当存储过程执行完了之后，result被赋值
+     *
      **/
     void killByProcedure(Map<String, Object> paramMap);
 }

@@ -32,8 +32,8 @@ public enum SeckillStatEnum {
     /**
      * @return
      * @MethodName
-     * @Description TODO ？？？？
-     * @Param
+     * @Description 根据state字段来迭代所有的类型
+ * @Param
      **/
     public static SeckillStatEnum stateOf(int index) {
         for (SeckillStatEnum state : values()) {

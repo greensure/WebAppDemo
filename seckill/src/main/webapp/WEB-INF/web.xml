@@ -19,6 +19,10 @@
         </init-param>
     </servlet>
 
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
     <servlet-mapping>
         <servlet-name>seckill-dispatcher</servlet-name>
         <!--默认匹配所有请求/-->

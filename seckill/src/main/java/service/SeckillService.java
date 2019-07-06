@@ -6,6 +6,7 @@ import entity.Seckill;
 import exception.RepeatKillException;
 import exception.SeckillCloseException;
 import exception.SeckillException;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -41,12 +42,30 @@ public interface SeckillService {
      */
     Exposer exportSeckillUrl(long seckillId);
 
-    //  执行秒杀操作
-//    TODO md5此处作用？
+    /**
+     * 执行秒杀操作
+     * 该接口需要出异常，原因：告诉Spring声明式事务执行提交还是回滚
+     * TODO md5此处作用？
+     * @param seckillId
+     * @param userPhone
+     * @param md5
+     * @return
+     * @throws SeckillException
+     * @throws RepeatKillException
+     * @throws SeckillCloseException
+     */
     SeckillExecution executeSeckill(long seckillId, long userPhone, String md5) throws SeckillException, RepeatKillException, SeckillCloseException;
 
-    //    通过存储过程，执行秒杀操作
-//    TODO md5此处作用？
+    /**
+     *  通过存储过程，执行秒杀操作
+     *  java客户端调用存储过程的逻辑
+     *  注意：该接口不需要抛出异常，原因：无需告诉Spring声明式事务执行提交还是回滚
+     *  TODO md5此处作用？
+     * @param seckillId
+     * @param userPhone
+     * @param md5
+     * @return
+     */
     SeckillExecution executeSeckillProcedure(long seckillId, long userPhone, String md5);
 }
 

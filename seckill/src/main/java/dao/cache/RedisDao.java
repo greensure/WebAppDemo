@@ -7,7 +7,6 @@ import entity.Seckill;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import utils.JedisUtils;
-
 import java.util.UUID;
 import java.util.function.Function;
 
@@ -40,13 +39,13 @@ public class RedisDao {
      * 因为google的protobuffer需要我们自己写schema，组装成文件来告诉序列化，这样非常的不友好；
      * protostuff依赖动态的做了整个过程，性能没有什么损耗
      */
-    //Seckill.class类的字节码，通过反射可以拿到字节码有哪些属性、方法
+    // Seckill.class类的字节码，通过反射可以拿到字节码有哪些属性、方法
     // RuntimeSchema基于Seckill.class去做一个模式即schema，当在创建一个对象的时候，会根据schema来赋予相应的值，这是序列化的本质，
-    //即通过字节码、字节码对应的对象有哪些属性，会把字节码的数据传递给那些属性，这样就可以帮助我们序列化好这个对象
+    // 即通过字节码、字节码对应的对象有哪些属性，会把字节码的数据传递给那些属性，这样就可以帮助我们序列化好这个对象
     private RuntimeSchema<Seckill> schema = RuntimeSchema.createFrom(Seckill.class);
 
     /**
-     * 通过Redis去拿到seckillId，不用去访问db，而是访问Redis
+     * 通过seckillId去拿到Redis缓存中的Seckill对象，不用去访问db，而是访问Redis
      * @param seckillId
      * @return
      */
@@ -88,9 +87,11 @@ public class RedisDao {
                 //key.getBytes()传递一个字节数组
                 byte[] bytes = jedis.get(key.getBytes());
 
-                /**若字节数组不空，则从缓存重获取到了，获取到之后要用protostuff去转换
+                /**
+                 * 若字节数组不空，则从缓存重获取到了，获取到之后要用protostuff去转换
                  * protostuff只需要做两件事情：
-                 * 1、告诉protostuff这个对象的schema是什么，上面已经创建好一个全局的schema: private RuntimeSchema<Seckill> schema = RuntimeSchema.createFrom(Seckill.class);
+                 * 1、告诉protostuff这个对象的schema是什么，上面已经创建好一个全局的schema:
+                 * private RuntimeSchema<Seckill> schema = RuntimeSchema.createFrom(Seckill.class);
                  * 2、把这个对象的字节数据给protostuff,通过ProtostuffIOUtil工具类mergeFrom()方法把bytes字节数组存放数据，空对象seckill会按照schema把数据传到空对象seckill里
                  */
                 /**
@@ -127,7 +128,6 @@ public class RedisDao {
         //构造key
         String lockKey = "seckill:locks:getSeckill:" + seckillId;
         String lockRequestId = UUID.randomUUID().toString();
-
 
         try {
             //循环直到取到数据
@@ -181,6 +181,12 @@ public class RedisDao {
         return putSeckill(seckill, null);
     }
 
+    /**
+     *  putSeckill  ---》set方法
+     * @param seckill
+     * @param jedis
+     * @return
+     */
     public String putSeckill(Seckill seckill, Jedis jedis) {
         boolean hasJedis = jedis != null;
         try {
